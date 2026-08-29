@@ -397,10 +397,7 @@ COPY . .
 ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 
-# Note: Docker may warn about "secrets in ARG/ENV" - this is OK!
-# The NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is meant to be public (it starts with pk_)
 
-# Build the Next.js app (creates 'out' directory with static files)
 RUN npm run build
 
 # Stage 2: Create the final Python container

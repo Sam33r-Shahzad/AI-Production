@@ -405,9 +405,7 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-# --- Lambda Web Adapter additions (the only changes vs. the video's Dockerfile) ---
-# Drops a Lambda extension binary into /opt/extensions. The binary is inert
-# unless invoked by the Lambda runtime, so local `docker run` is unaffected.
+
 COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.0.0 /lambda-adapter /opt/extensions/lambda-adapter
 
 # Tell the adapter which port FastAPI listens on
